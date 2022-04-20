@@ -1,109 +1,25 @@
-import React, {useState, useEffect, useRef} from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-// import BarCharts from './compoonent/barCharts';
-import IndividualAvarage from './component/dataChartTemplates/IndividualAvarage';
-import GeneralAvarage from './component/dataChartTemplates/GeneralAvarage'
-import SideBar from './component/sideBar/SideBar';
-import TopBar from './component/topBar/TopBar'
-import Excelentboard from './component/Emplyeefolder/Excelentboard';
-import Map from './component/maps/Map';
-import News from './component/news/News';
-import GeneralChart from './component/charts/GeneralChart'
-import Navbar from './component/nav-bar/NavBar'
-import Data from './data/data';
-// import {getData,getvehicle,getName} from './api/api';
-// import axios from 'axios'
-import { io } from "socket.io-client";
-import {useSpring, animated} from 'react-spring'
-// import TestData from './Test';
-// import Calculate from './component/calculateMap/CalculateMapDistance';
-// import IndividualLocation from './component/maps/individualLocation';
+import logo from './logo.svg';
+import './App.css';
 
-
-const  App = () =>{
-const [allData, setAllData] = useState([]);
-const [vehicle,setVehicle] = useState([]);
-const [sideOpen, setSideOpen] = useState(false);
-const [avarageName, setAvarageName] = useState('')
-// const {calculateRoute,directionsResponse} = Calculate();
-
-// console.log(calculateRoute())
-  // useEffect(() => {
-  //   getData()
-  //   .then((data) =>{
-  //     setAllData(data.services)
-  //     })
-
-  //     getvehicle()
-  //     .then((data) =>{
-  //       setVehicle(data.vehicles);
-  //     })
-  // }, [])
-  
-  // console.log(getvehicle())
-  // const socket = useRef()
-  // let dataTest = {
-  //   smoke:"",
-  //   mask:"",
-  //   sleep:"",
-  //   phone:"",
-  // }
-
-  // let second = 0
-  // let minute = 0
-  // let smokeIndex
-
-  // useEffect(() => {
-  //   socket.current = io("ws://wakemeup-aw2iqmhlm-samedovresul.vercel.app");
-  //   socket.current.on("device", (data) =>{
-  //     setVehicle(data)
-  //     console.log(data)
-  //   })
-  // }, [])
-
-
-  // useEffect(() => {
-  //   Data[0].location = vehicle
-  //   // Map() 
-  // }, [vehicle])
-  
-
-  
-
-
-  
-  return(
-    <Router>
-      
-      <article className='windows'>
-        
-          <SideBar sideOpen={sideOpen}    />
-          <div  className='right-side'>
-            <Navbar setSideOpen={setSideOpen} sideOpen={sideOpen} />
-            <TopBar setAvarageName={setAvarageName} />
-              <Routes>
-                
-              <Route path='/' element={ <GeneralAvarage allData={allData} Data={Data} />} />
-                <Route  path="IndividualAvarage" element={ 
-                <IndividualAvarage
-                  avarageName={avarageName} 
-                  // calculateRoute={calculateRoute}
-                  // directionsResponse={directionsResponse}
-                   />
-                } />
-                <Route path="map"  element={ <Map Data={Data} vehicle={vehicle}   /> } />
-                <Route path="news"  element={ <News allData={allData} /> } />
-                <Route path='generalChart' element={ <GeneralChart /> }/>
-                </Routes>
-            <Excelentboard setAvarageName={setAvarageName} />
-          </div>
-      </article>
-        
-    </Router>
-  )
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-
-export default App
-
+export default App;
