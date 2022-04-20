@@ -48,13 +48,13 @@ const  App = () =>{
     // let minute = 0
     // let smokeIndex
   
-    // useEffect(() => {
-    //   socket.current = io("ws://wakemeup-aw2iqmhlm-samedovresul.vercel.app");
-    //   socket.current.on("device", (data) =>{
-    //     setVehicle(data)
-    //     console.log(data)
-    //   })
-    // }, [])
+    useEffect(() => {
+      socket.current = io("ws://wakemeup-aw2iqmhlm-samedovresul.vercel.app");
+      socket.current.on("device", (data) =>{
+        // setVehicle(data)
+        console.log(data)
+      })
+    }, [])
   
   
     // useEffect(() => {
