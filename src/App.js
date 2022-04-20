@@ -36,7 +36,7 @@ const  App = () =>{
     // }, [])
     
     // console.log(getvehicle())
-    // const socket = useRef()
+    const socket = useRef()
     // let dataTest = {
     //   smoke:"",
     //   mask:"",
