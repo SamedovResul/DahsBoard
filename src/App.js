@@ -19,7 +19,7 @@ import {useSpring, animated} from 'react-spring'
 // import TestData from './Test';
 // import Calculate from './component/calculateMap/CalculateMapDistance';
 // import IndividualLocation from './component/maps/individualLocation';
-import './app.css'
+
 
 const  App = () =>{
 const [allData, setAllData] = useState([]);
