@@ -23,7 +23,7 @@ const SideBar = props => {
   
 
   return (
-    <article className='SideBar'>
+    <article className='SideBar' style={{width:"5%"}}>
     <div className='logo-div'>
       {/* <p>WakeMeUp</p>  */}
       

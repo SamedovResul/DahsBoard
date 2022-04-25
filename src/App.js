@@ -49,11 +49,11 @@ const  App = () =>{
     // let smokeIndex
   
     useEffect(() => {
-      socket.current = io("ws://wakemeup-aw2iqmhlm-samedovresul.vercel.app");
-      socket.current.on("device", (data) =>{
-        // setVehicle(data)
-        console.log(data)
-      })
+      // socket.current = io("ws://wakemeup-aw2iqmhlm-samedovresul.vercel.app");
+      // socket.current.on("device", (data) =>{
+      //   // setVehicle(data)
+      //   console.log(data)
+      // })
     }, [])
   
   
