@@ -4,12 +4,12 @@ import Calculate from '../calculateMap/CalculateMapDistance';
 import IndividualLocation from './IndividualLocation';
 const Map = (props) => {
   const [map, setMap] = useState(null)
-  const {directionsResponse, Data, vehicle} = props;
+  const {directionsResponse, location, vehicle} = props;
   const { isLoaded } = useJsApiLoader({
     id: "AIzaSyCejJQhkN2JGs2SkWhTNPfQ00xegFnQMM4",
     googleMapsApiKey:'AIzaSyBWwm-7OLF0A2Ue4mYbDrZtuzDfsGCqXKY' 
   })
-  // console.log(Data[0].location)
+  console.log(location)
   // console.log("test")
   
 // dfghjds
