@@ -9,8 +9,8 @@ const Map = (props) => {
     id: "AIzaSyCejJQhkN2JGs2SkWhTNPfQ00xegFnQMM4",
     googleMapsApiKey:'AIzaSyBWwm-7OLF0A2Ue4mYbDrZtuzDfsGCqXKY' 
   })
-  console.log(Data[0].location)
-  console.log("test")
+  // console.log(Data[0].location)
+  // console.log("test")
   
 // dfghjds
   const containerStyle = {
