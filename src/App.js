@@ -51,16 +51,17 @@ const  App = () =>{
     useEffect(() => {
       socket.current = io("wss://wakemeup-app.herokuapp.com",{ transports : ['websocket'] });
       socket.current.on("device", (data) =>{
-        // setVehicle(data)
+        setVehicle(data)
         console.log(data)
       })
     }, [])
   
   
-    // useEffect(() => {
-    //   Data[0].location = vehicle
-    //   // Map() 
-    // }, [vehicle])
+    useEffect(() => {
+      // Data[0].location = vehicle
+      console.log(vehicle)
+      // Map() 
+    }, [vehicle])
     
   
     
