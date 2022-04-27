@@ -49,7 +49,7 @@ const  App = () =>{
     // let smokeIndex
   
     useEffect(() => {
-      socket.current = io("ws://wakemeup-app.herokuapp.com");
+      socket.current = io("ws://wakemeup-app.herokuapp.com",{ transports : ['websocket'] });
       socket.current.on("device", (data) =>{
         // setVehicle(data)
         console.log(data)
