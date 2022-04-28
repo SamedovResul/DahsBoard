@@ -14,11 +14,14 @@ import News from './component/news/News';
 import GeneralChart from './component/charts/GeneralChart'
 import Navbar from './component/nav-bar/NavBar'
 import Data from './data/data';
-import location from './data/location'
+import locationData from './data/location'
 
 const  App = () =>{
   const [allData, setAllData] = useState([]);
-  const [vehicle,setVehicle] = useState([]);
+  const [vehicle,setVehicle] = useState({
+    lat:'',
+    lng:''
+  });
   const [sideOpen, setSideOpen] = useState(false);
   const [avarageName, setAvarageName] = useState('')
   // const {calculateRoute,directionsResponse} = Calculate();
@@ -52,16 +55,29 @@ const  App = () =>{
     useEffect(() => {
       socket.current = io("wss://wakemeup-app.herokuapp.com",{ transports : ['websocket'] });
       socket.current.on("device", (data) =>{
-        setVehicle(data)
-        // console.log(data)
+        setVehicle({
+          lat:data.lat,
+          lng:data.lng
+        })
+        console.log(data)
       })
     }, [])
   
-  
+     
+      
+
+    // setTimeout(() => {
+    //   setVehicle({
+    //     lat:49.803603,
+    //     lng:40.385220
+    //   })
+    // }, 4000);
+    
     useEffect(() => {
-      location = vehicle
-      console.log(vehicle)
+      locationData.location = vehicle
+      // console.log(locationData)
     }, [vehicle])
+    
     
   
     
@@ -87,7 +103,7 @@ const  App = () =>{
                     // directionsResponse={directionsResponse}
                      />
                   } />
-                  <Route path="map"  element={ <Map location={location} vehicle={vehicle}   /> } />
+                  <Route path="map"  element={ <Map locationData={locationData} Data={Data} vehicle={vehicle}   /> } />
                   <Route path="news"  element={ <News allData={allData} /> } />
                   <Route path='generalChart' element={ <GeneralChart /> }/>
                   </Routes>

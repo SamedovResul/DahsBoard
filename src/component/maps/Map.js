@@ -2,15 +2,19 @@ import React ,{useState,useCallback,useEffect} from 'react'
 import { GoogleMap, useJsApiLoader,Marker, DirectionsRenderer,Polyline} from '@react-google-maps/api';
 import Calculate from '../calculateMap/CalculateMapDistance';
 import IndividualLocation from './IndividualLocation';
+import locationData from '../../data/location';
 const Map = (props) => {
   const [map, setMap] = useState(null)
-  const {directionsResponse, location, vehicle} = props;
+  const {directionsResponse, Data, vehicle} = props;
   const { isLoaded } = useJsApiLoader({
     id: "AIzaSyCejJQhkN2JGs2SkWhTNPfQ00xegFnQMM4",
     googleMapsApiKey:'AIzaSyBWwm-7OLF0A2Ue4mYbDrZtuzDfsGCqXKY' 
   })
-  console.log(location)
-  // console.log("test")
+  console.log(locationData.location)
+  useEffect(() => {
+    console.log(locationData)
+  }, [locationData])
+  
   
 // dfghjds
   const containerStyle = {
@@ -21,6 +25,8 @@ const Map = (props) => {
     lat: 49.803603,
     lng: 40.385220
   };
+
+
   const onLoad = useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
     map.fitBounds(bounds);
@@ -38,18 +44,18 @@ const Map = (props) => {
       </p> */}
     <GoogleMap
       mapContainerStyle={containerStyle}
-      center={center}
+      center={locationData.location }
       zoom={15}
       // onLoad={onLoad}
       onUnmount={onUnmount}
     >
       {
-        directionsResponse === undefined ? (
+        locationData.location.lat ? (
           
           <Marker 
             position = {{
-              lat: 49.803603,
-              lng: 40.385220
+              lat: locationData.location.lat,
+              lng: locationData.location.lng
               }}
           />
           // <DirectionsRenderer directions={directionsResponse} />
@@ -67,8 +73,8 @@ const Map = (props) => {
                   key={i}
                   position = {
                     {
-                      lat: location.lat,
-                      lng: location.long
+                      lat: 40.378584,
+                      lng: 49.847758
                     }
                   }
                   />

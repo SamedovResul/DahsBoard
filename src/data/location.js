@@ -1,4 +1,9 @@
-const location = {
-  lat:0,
-  lng:0
+const locationData = {
+  location : {
+    lat:'',
+    lng:''
+  }
+  
 }
+
+export default locationData
