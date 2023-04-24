@@ -24,65 +24,37 @@ const  App = () =>{
   });
   const [sideOpen, setSideOpen] = useState(false);
   const [avarageName, setAvarageName] = useState('')
-  // const {calculateRoute,directionsResponse} = Calculate();
-  
-  // console.log(calculateRoute())
-    // useEffect(() => {
-    //   getData()
-    //   .then((data) =>{
-    //     setAllData(data.services)
-    //     })
-  
-    //     getvehicle()
-    //     .then((data) =>{
-    //       setVehicle(data.vehicles);
-    //     })
-    // }, [])
-    
-    // console.log(getvehicle())
     const socket = useRef()
-    // let dataTest = {
-    //   smoke:"",
-    //   mask:"",
-    //   sleep:"",
-    //   phone:"",
-    // }
-  
-    // let second = 0
-    // let minute = 0
-    // let smokeIndex
   
     useEffect(() => {
-      socket.current = io("wss://wakemeup-app.herokuapp.com",{ transports : ['websocket'] });
+      // socket.current = io("wss://wakemeup-app.herokuapp.com",{ transports : ['websocket'] });
+      socket.current = io("ws://localhost:5000",{ transports : ['websocket'] });
       socket.current.on("device", (data) =>{
-        setVehicle({
-          lat:data.lat,
-          lng:data.lng
-        })
+        // setVehicle({
+        //   lat:data.lat,
+        //   lng:data.lng,
+        //   smoke: data.smoke,
+        //   phone: data.phone,
+        //   sleep: data.sleep,
+        //   SürətLimiti: data.SürətLimiti
+        // })
         console.log(data)
+        // if(locationData[0].id){
+        //   data
+        // }
       })
     }, [])
   
      
-      
-
-    // setTimeout(() => {
-    //   setVehicle({
-    //     lat:49.803603,
-    //     lng:40.385220
-    //   })
-    // }, 4000);
-    
     useEffect(() => {
-      locationData.location = vehicle
-      // console.log(locationData)
+      // locationData[0].location = vehicle
+      
+      // Data[0].array[0] = vehicle.smoke
+      // Data[0].array[1] = vehicle.phone
+      // Data[0].array[2] = vehicle.sleep
+      // Data[0].array[3] = vehicle.SürətLimiti
+      // console.log(Data[0].array)
     }, [vehicle])
-    
-    
-  
-    
-  
-  
     
     return(
       <Router>

@@ -216,23 +216,29 @@
 
 
 .topbar
+.col-md-3 .box{
+  border: 2px solid black;
+}
+
+.topbar
 .col-md-3:nth-of-type(1) .box{
-  background-image: linear-gradient(30deg, #14e7d9 , #5e79e9);
+  /* background-image: linear-gradient(30deg, #14e7d9 , #5e79e9); */
+  /* border:2px solid ; */
 }
 
 .topbar
 .col-md-3:nth-of-type(2) .box{
-  background-image: linear-gradient(30deg, #f54da0 , #fe7376);
+  /* background-image: linear-gradient(30deg, #f54da0 , #fe7376); */
 }
 
 .topbar
 .col-md-3:nth-of-type(3) .box{
-  background-image: linear-gradient(30deg, #3ae591 , #37b0b5);
+  /* background-image: linear-gradient(30deg, #3ae591 , #37b0b5); */
 }
 
 .topbar
 .col-md-3:nth-of-type(4) .box{
-  background-image: linear-gradient(30deg, #ffdc3b , #ff8154);
+  /* background-image: linear-gradient(30deg, #ffdc3b , #ff8154); */
 }
 
 .box a p{
@@ -414,7 +420,7 @@ div:nth-of-type(1) canvas{
 
 
 
-.bottomNav
+/* .bottomNav
 .col-md-3:nth-of-type(2) .box{
   background-image: linear-gradient(30deg, #14e7d9 , #5e79e9);
 }
@@ -432,7 +438,12 @@ div:nth-of-type(1) canvas{
 .bottomNav
 .col-md-3:nth-of-type(5) .box{
   background-image: linear-gradient(30deg, #ffdc3b , #ff8154);
-}
+} */
+
+.bottomNav
+.col-md-3 .box{
+  border: 2px solid black;
+} 
 
 
 /* individual information */
@@ -456,6 +467,14 @@ div:nth-of-type(1) canvas{
 .individual div .Map{
   width: 50%;
 }
+
+.gm-style .gmnoprint:nth-of-type(3){
+  display: none;
+}
+
+/* .gmnoprint{
+  display: none;
+} */
 
 /* .individual .col-md-12 div .individualChart{
   width: 50% !important;

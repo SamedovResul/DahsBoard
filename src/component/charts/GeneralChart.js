@@ -12,6 +12,7 @@ const Barchart = (props) => {
     TotalSleep,
     TotalMask
   } = CalculateFunc(Data)
+  // Data ? console.log(true) : console.log(false)
   // console.log(TotalSmoke)
   // console.log(TotalPhone)
   // console.log(TotalSleep)
