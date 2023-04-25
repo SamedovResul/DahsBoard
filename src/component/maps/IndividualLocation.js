@@ -1,6 +1,6 @@
 import React from 'react'
 import { Marker } from '@react-google-maps/api'
-
+// import io from "socket.io-client";
 
 const IndividualLocation = (vehicle) => {
   console.log(vehicle)
